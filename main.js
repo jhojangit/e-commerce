@@ -24,7 +24,7 @@ function showProducts(products) {
                 <p class="product_price">$${products[product].price} <span>Stock ${products[product].quantity}</span></p>
                 <button class="product_button" id="${product}">+</button>
                 </div>
-            <p class="product_desription">${products[product].name}</p>
+            <p class="product_name">${products[product].name}</p>
         </div>`
 
     }
