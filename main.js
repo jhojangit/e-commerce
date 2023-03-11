@@ -20,11 +20,12 @@ function showProducts(products) {
         html += `
         <div class="product_container">
             <img src="${product.image}" alt="">
-            <button class="product_button">+</button>
-            <p class="product_price">$${product.price} <span>Stock ${product.quantity}</span></p>
+            <div class="product_line">
+                <p class="product_price">$${product.price} <span>Stock ${product.quantity}</span></p>
+                <button class="product_button">+</button>
+                </div>
             <p class="product_desription">${product.name}</p>
         </div>`
-
 
     }
     htmlProducts.innerHTML = html

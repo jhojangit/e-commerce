@@ -130,7 +130,6 @@ main{
     justify-content: space-between;
     border-radius: 1rem;
     overflow: hidden;
-    position: relative;
     justify-content: center;
     align-items: center;
 }
@@ -144,23 +143,29 @@ main{
     transform: translate(0px, -7px);
 }
 
-.product_container button{
+.product_line{
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.product_line button{
     background-color: white;
     align-self: self-end;
-    margin-right: 2rem;
     width: 30px;
     height: 30px;
     border: none;
     border-radius: 50%;
     position: absolute;
-    bottom: 75px;
+    right:2rem;
+    bottom: 2rem;
     -webkit-box-shadow: 0px 0px 4px .5px rgba(0,0,0,0.4);
     -moz-box-shadow: 0px 0px 4px .5px rgba(0,0,0,0.4);
     box-shadow: 0px 0px 4px .5px rgba(0,0,0,0.4);
     transition: background-color .5s;
 }
 
-.product_container button:hover{
+.product_line button:hover{
     background-color: var(--principalRed);
     color: white;
 }
