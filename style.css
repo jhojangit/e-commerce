@@ -84,10 +84,10 @@ header{
 }
 
 main{
-    max-width:800px;
+    max-width:900px;
     margin: auto;
     gap: 2rem;
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
 }
 
