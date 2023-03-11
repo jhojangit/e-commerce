@@ -16,15 +16,15 @@ function showProducts(products) {
     let html = ''
 
 
-    for (const product of products) {
+    for (const product in products) {
         html += `
         <div class="product_container">
-            <img src="${product.image}" alt="">
+            <img src="${products[product].image}" alt="">
             <div class="product_line">
-                <p class="product_price">$${product.price} <span>Stock ${product.quantity}</span></p>
-                <button class="product_button">+</button>
+                <p class="product_price">$${products[product].price} <span>Stock ${products[product].quantity}</span></p>
+                <button class="product_button" id="${product}">+</button>
                 </div>
-            <p class="product_desription">${product.name}</p>
+            <p class="product_desription">${products[product].name}</p>
         </div>`
 
     }

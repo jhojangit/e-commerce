@@ -139,7 +139,7 @@ main{
     transition: transform 0.5s;
 }
 
-.product_container img:hover{
+.product_container:hover img{
     transform: translate(0px, -7px);
 }
 
@@ -152,8 +152,9 @@ main{
 .product_line button{
     background-color: white;
     align-self: self-end;
-    width: 30px;
-    height: 30px;
+    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
     border: none;
     border-radius: 50%;
     position: absolute;
@@ -187,6 +188,8 @@ main{
 .product_desription{
     margin: auto;
     margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 
