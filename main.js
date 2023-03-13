@@ -1,5 +1,7 @@
 
 async function main(){
+
+    
     const db = {
         products: JSON.parse(window.localStorage.getItem('products')) 
                     || await getProducts(),
@@ -7,7 +9,7 @@ async function main(){
         cart: {}
     }
 
-
+    showCart()
 
     showProducts(db)
 
@@ -17,9 +19,10 @@ async function main(){
             const productID = Number(e.target.id)
 
             const productFound = db.products.find(product => product.id === productID)
-
+            console.log(productFound.id);
         if(db.cart[productFound.id]){
             db.cart[productFound.id].amount ++
+            
         }else{
             let newProduct = structuredClone(productFound)
             newProduct.amount = 1
@@ -27,9 +30,28 @@ async function main(){
 
         }
 
-        console.log(db.cart);
 
 
+
+    let cartProducts = document.querySelector('.cart_products')
+        
+    let html = ''
+    for (const i in db.cart) {
+        html += `
+        <div class="item_product">
+            <div class="item_product_img">
+                <img src="${db.cart[i].image}" alt="">
+            </div>
+            <div class='item_product_body'>
+                    <p class="item_product_price">$${db.cart[i].price} <span>Stock ${db.cart[i].quantity}</span></p>
+                    <p class="item_product_name">${db.cart[i].name}</p>
+                    <p class ='item_amount'>Cantidad: ${db.cart[i].amount}</p>
+            </div>
+        </div>`
+        
+    }
+
+    cartProducts.innerHTML = html
         } 
         })
 
@@ -63,6 +85,16 @@ function showProducts(db) {
     }
     htmlProducts.innerHTML = html
 
+}
+
+function showCart(){
+
+    let iconCart = document.querySelector('.bx-cart')
+    let cartHTML = document.querySelector('.cart')
+
+    iconCart.addEventListener('click', ()=>{
+        cartHTML.classList.toggle('cart_show')
+    })
 }
 
 main()
