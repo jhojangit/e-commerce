@@ -52,12 +52,22 @@ nav{
     position: fixed;
     display: flex;
     align-items: center;
-    z-index: 1000;
     justify-content: space-between;
+    z-index: 1000;
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: 1.5rem;
     transition: background-color .5s;
+
+}
+
+.nameLogo{
+    display: flex;
+    align-items: center;
+}
+
+nav svg{
+    width: 50px;
 }
 
 .visible_nav{
@@ -65,6 +75,34 @@ nav{
     -webkit-box-shadow: 0px -19px 33px 16px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px -19px 33px 16px rgba(0,0,0,0.75);
     box-shadow: 0px -19px 33px 16px rgba(0,0,0,0.75);
+}
+
+.main_products-filter{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding-bottom: 2rem;
+}
+
+.main_products-filter button{
+    background-color: var(--button-color);
+    color: var(--card-color);
+    font-size: 1.2rem;
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: .5rem;
+    transition: background-color .3s;
+}
+
+.main_products-filter button:hover{
+    background-color: var(--card-color);
+    color: var(--button-color);
+}
+
+.main_products-filter button:active{
+    background-color: var(--principalRed);
 }
 
 .cart{
@@ -109,6 +147,18 @@ nav{
 .cart_products .item_product img{
     width: 100px;
     background-color: var(--card-color);
+}
+
+.item_product_price{
+    color: var(--principalRed);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.item_product_options > i{
+    cursor: pointer;
+    margin-left: 1rem;
+    margin-top: .5rem;
 }
 
 .cart_total{
@@ -201,29 +251,6 @@ main{
     text-align: center;
 }
 
-.main_products-filter{
-    max-width: 800px;
-    display: flex;
-    justify-content: space-evenly;
-    margin: auto;
-    gap: 1rem;
-    padding-bottom: 2rem;
-}
-
-.main_products-filter div{
-    background-color: var(--body-color);
-    color: var(--text-color);
-    padding: .5rem;
-    cursor: default;
-    transition: background-color .5s;
-    border-radius: .5rem;
-    border: 1px dashed grey;
-}
-
-.main_products-filter div:hover{
-    background-color: var(--button-color);
-    color: var(--card-color);
-}
 
 .main_products{
     max-width: 1024px;

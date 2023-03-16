@@ -15,14 +15,24 @@
     <header>
 
         <nav>
-            <a href="">Jrivera</a>
+            <div class="nameLogo">
+                <a href="">JRStore</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="nav_logo-icon">
+                        <title>Academlo Logo</title>
+                        <g>
+                            <g>
+                                <path d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+                                </path>
+                            </g>
+                        </g>
+                  </svg>
+            </div>
+            
             <i class='bx bx-cart'></i>
 
             <div class="cart">
                 <div class="cart_products"></div>
-                <div class="cart_total">
-                </div>
-                
+                <div class="cart_total"></div>
             </div>
         </nav>
 
@@ -47,23 +57,13 @@
     <main>
         
             <div class="main_products-filter">
-                    <div class="filter_all">
-                        <p>Show all</p>
-                        <p>Show all products</p>
-                    </div>
+                    <button class="filter_all" data-filter="all">All</button>
 
-                    <div class="filter_shirt">
-                        <p>Shirt</p>
-                    </div>
+                    <button class="filter_shirt" data-filter=".shirt">shirt</button>
 
-                    <div class="filter_hoddie">
-                        <p>Hoddie</p>
-                    </div>
+                    <button class="filter_hoddie" data-filter=".hoddie">hoddie</button>
 
-                    <div class="filter_sweater">
-                        <p>Sweater</p>
-                    </div>
-                
+                    <button class="filter_sweater" data-filter=".sweater">sweater</button>
             </div>
             <div class="main_products"></div>
 
@@ -108,6 +108,6 @@
     </footer>
 
 
-
+    <script src="path\to\mixitup.min.js"></script>
 </body>
 </html>

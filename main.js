@@ -8,6 +8,7 @@ async function main() {
         cart: JSON.parse(window.localStorage.getItem('cart')) || {}
     }
 
+
     showCart()
 
     showProducts(db)
@@ -21,6 +22,11 @@ async function main() {
     cartTotal(db)
 
     visibleNav()
+
+    mix()
+
+
+
 }
 
 async function getProducts() {
@@ -28,6 +34,24 @@ async function getProducts() {
     let res = await data.json()
     window.localStorage.setItem('products', JSON.stringify(res))
     return res;
+
+
+    
+}
+
+function mix() {
+    mixitup(".main_products", {
+        selectors: {
+            target: ".product_container"
+        },
+        "animation": {
+            "duration": 602,
+            "nudge": false,
+            "reverseOut": true,
+            "effects": "fade translateX(20%) translateY(20%) translateZ(-100px) rotateX(90deg) rotateY(90deg) stagger(30ms)"
+        }
+    });
+
 }
 
 function addItemsCart(db) {
@@ -35,6 +59,8 @@ function addItemsCart(db) {
     productsHTML.addEventListener('click', e => {
         if (e.target.classList.contains('product_button')) {
             const productID = Number(e.target.id)
+
+            
 
             const productFound = db.products.find(product => product.id === productID)
 
@@ -52,6 +78,9 @@ function addItemsCart(db) {
             localStorage.setItem('cart', JSON.stringify(db.cart))
             showProductsCart(db)
             cartTotal(db)
+
+
+            
         }
     })
 }
@@ -68,12 +97,10 @@ function showProductsCart(db) {
             </div>
             <div class='item_product_body'>
             <p class="item_product_name"> <b>${db.cart[i].name}</b></p>
-            <p class="item_product_price">$${db.cart[i].price}.00 
-            <br> <span> <em>Cantidad en Stock: ${db.cart[i].quantity}</em></span></p>
-            <p class ='amount'> <b class ='item_amount'>${db.cart[i].amount}</b> </p>
-            <p class ='sub_total_item'>Sub-Total: $<p class='subtotal_price'> ${db.cart[i].amount *db.cart[i].price}.00 </p></p>
-
-            
+            <p class="item_product_price">$${db.cart[i].price}.00</p>
+            <span> <em>Cantidad en Stock: ${db.cart[i].quantity}</em></span></p>
+            <p class ='amount'>Items <b class ='item_amount'> ${db.cart[i].amount}</b> </p>
+            <p class ='sub_total_item'>Sub-Total: $<span class='subtotal_price'>${db.cart[i].amount *db.cart[i].price}.00 </span></p>
                     <div class='item_product_options'>
                         <i class='bx bx-plus' id='${db.cart[i].id}'></i>
                         <i class='bx bx-minus' id='${db.cart[i].id}'></i>
@@ -93,8 +120,8 @@ function cartTotal(db) {
     let cartTotalHTML = document.querySelector('.cart_total')
     let cartProductsHTML = document.querySelector('.cart_products')
     let amountHTML = document.querySelectorAll('.item_amount')
-
     
+
 
     let total = 0
     cartSub.forEach(element =>{
@@ -106,8 +133,8 @@ function cartTotal(db) {
         amount += Number(element.textContent)
     })
 
-    let bxCart = document.querySelector(".bx-cart")
-    bxCart.innerHTML = amount
+    document.querySelector(".bx-cart").innerHTML=amount
+    
 
 
 
@@ -122,9 +149,9 @@ function cartTotal(db) {
     cartTotalHTML.innerHTML = body_total
 
 
+
     cartProductsHTML.addEventListener('click', e =>{
 
-        
         if (e.target.classList.contains('bx-plus') ||
         e.target.classList.contains('bx-minus') ||
         e.target.classList.contains('bx-trash-alt')) {
@@ -133,6 +160,20 @@ function cartTotal(db) {
         
     })
 
+
+    let btnBuy = document.querySelector('.btn_buy')
+    btnBuy.addEventListener('click', ()=> {
+
+        
+        db.cart = {}
+
+        localStorage.setItem('cart', JSON.stringify(db.cart))
+
+        cartTotal(db)
+        showProductsCart(db)
+        showCart()
+
+    })
 
 }
 
@@ -175,10 +216,10 @@ function showProducts(db) {
     let htmlProducts = document.querySelector('.main_products')
     let html = ''
 
-
+    console.log(db.products)
     for (const i in db.products) {
         html += `
-        <div class="product_container">
+        <div class="product_container ${db.products[i].category}">
             <img src="${db.products[i].image}" alt="">
             <div class="product_line">
                 <p class="product_price">$${db.products[i].price} <span>Stock ${db.products[i].quantity}</span></p>
@@ -186,6 +227,8 @@ function showProducts(db) {
                 </div>
             <p class="product_name">${db.products[i].name}</p>
         </div>`
+
+
 
     }
     htmlProducts.innerHTML = html
