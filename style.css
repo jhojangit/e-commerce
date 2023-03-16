@@ -200,10 +200,11 @@ main{
 
 .main_products-filter{
     max-width: 800px;
-    display: grid;
+    display: flex;
+    justify-content: space-evenly;
     margin: auto;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: 1rem;
+    padding-bottom: 2rem;
 }
 
 .main_products-filter div{
@@ -212,6 +213,8 @@ main{
     padding: .5rem;
     cursor: default;
     transition: background-color .5s;
+    border-radius: .5rem;
+    border: 1px dashed grey;
 }
 
 .main_products-filter div:hover{
@@ -351,7 +354,6 @@ footer{
     color: white;
     font-weight: bold;
 }
-
 
 
 @media (min-width: 580px) {
