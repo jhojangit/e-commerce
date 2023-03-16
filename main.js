@@ -70,8 +70,8 @@ function showProductsCart(db) {
             <p class="item_product_name"> <b>${db.cart[i].name}</b></p>
             <p class="item_product_price">$${db.cart[i].price}.00 
             <br> <span> <em>Cantidad en Stock: ${db.cart[i].quantity}</em></span></p>
-            <p class ='item_amount'>Cantidad: ${db.cart[i].amount}</p>
-            <p class ='sub_total_item'>Sub-Total: $<b class='subtotal_price'> ${db.cart[i].amount *db.cart[i].price}.00 </b></p>
+            <p class ='amount'> <b class ='item_amount'>${db.cart[i].amount}</b> </p>
+            <p class ='sub_total_item'>Sub-Total: $<p class='subtotal_price'> ${db.cart[i].amount *db.cart[i].price}.00 </p></p>
 
             
                     <div class='item_product_options'>
@@ -92,17 +92,30 @@ function cartTotal(db) {
     let cartSub = document.querySelectorAll('.subtotal_price')
     let cartTotalHTML = document.querySelector('.cart_total')
     let cartProductsHTML = document.querySelector('.cart_products')
+    let amountHTML = document.querySelectorAll('.item_amount')
+
+    
 
     let total = 0
     cartSub.forEach(element =>{
         total += Number(element.textContent)
     })
 
+    let amount = 0
+    amountHTML.forEach(element =>{
+        amount += Number(element.textContent)
+    })
+
+    let bxCart = document.querySelector(".bx-cart")
+    bxCart.innerHTML = amount
+
+
 
     let body_total = 
                     `
                     <div class="body_total">
-                        <h3>Total: $ <span class='view_total'>${total}</span>.00</h3>
+                        <h4>Total: $<span class='view_total'>${total}</span>.00</h4>
+                        <p>Items: ${amount}</p>
                         <button class="btn_buy">Comprar</button>
                     </div>
     `
@@ -119,6 +132,7 @@ function cartTotal(db) {
         }
         
     })
+
 
 }
 
@@ -193,10 +207,8 @@ function visibleNav() {
     window.addEventListener('scroll', () =>{
         if (window.scrollY > 50) {
             navHTML.classList.add('visible_nav')
-            console.log(window.scrollY);
         }else{
             navHTML.classList.remove('visible_nav')
-            console.log(window.scrollY);
         }
         
     })
