@@ -80,7 +80,7 @@ nav svg{
 .main_products-filter{
     margin: auto;
     width: 80%;
-    display: flex;
+    display: flexbox;
     justify-content: center;
     gap: 3rem;
     padding-bottom: 2rem;
@@ -91,6 +91,7 @@ nav svg{
     color: var(--card-color);
     font-size: 1.2rem;
     padding: 1rem;
+    margin: 1rem;
     border: 1px solid transparent;
     border-radius: .5rem;
     transition: background-color .3s;
@@ -99,10 +100,6 @@ nav svg{
 .main_products-filter button:hover{
     background-color: var(--card-color);
     color: var(--button-color);
-}
-
-.main_products-filter button:active{
-    background-color: var(--principalRed);
 }
 
 .cart{

@@ -164,15 +164,31 @@ function cartTotal(db) {
     let btnBuy = document.querySelector('.btn_buy')
     btnBuy.addEventListener('click', ()=> {
 
+
+
         
-        db.cart = {}
+        if (total != 0) {
+            let confirma = confirm('¿Quieres confirmar la transacción?')
+            if (confirma) {
+                alert('Gracias por tu darnos tu dinero 💵💵💵💲')
+            db.cart = {}
 
-        localStorage.setItem('cart', JSON.stringify(db.cart))
+            localStorage.setItem('cart', JSON.stringify(db.cart))
 
-        cartTotal(db)
-        showProductsCart(db)
-        showCart()
-
+            cartTotal(db)
+            showProductsCart(db)
+            showCart(db)
+            showProducts(db)
+            addItemsCart(db)
+            handle(db)
+            main()
+            window.location.reload()
+                }
+            
+        }else{
+            alert('Agrega productos al carrito 🛒')
+        }
+        
     })
 
 }
