@@ -66,6 +66,19 @@ nav{
     align-items: center;
 }
 
+.nameLogo p{
+    display :none;
+}
+
+.nameLogo p:hover{
+    color: brown;
+}
+
+i.bx.bx-menu:hover{
+    color: var(--principalRed);
+    cursor: pointer;
+}
+
 nav svg{
     width: 50px;
 }
@@ -101,6 +114,11 @@ nav svg{
 .main_products-filter button:hover{
     background-color: var(--card-color);
     color: var(--button-color);
+}
+
+i.bx.bx-cart:hover{
+    cursor: pointer;
+    color: var(--principalRed);
 }
 
 .cart{
@@ -422,6 +440,18 @@ footer{
         flex-direction: column;
         gap: 1rem;
         margin-top: 25%;
+    }
+
+
+    .nameLogo p{
+        display: block;
+        padding-left: 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    i.bx.bx-menu{
+        display: none;
     }
 
     footer{
