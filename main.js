@@ -25,6 +25,8 @@ async function main() {
 
     visibleNav()
 
+    darkMode()
+
     mix()
 
 
@@ -294,6 +296,49 @@ function visibleNav() {
         }
         
     })
+}
+
+function darkMode() {
+    let botonDarkHTML = document.querySelector('.btn_dark')
+    let bodyHTML = document.querySelector('body')
+    let header_textHTML = document.querySelector('.header_text-box')
+    let header_HTML = document.querySelector('header')
+    let fotter_HTML = document.querySelector('footer')
+    let headIMG_HTML = document.querySelector('.header_img')
+    let headerColorHTML = document.querySelector('header')
+    let cartDarkHTML = document.querySelector('.cart')
+
+
+
+    botonDarkHTML.addEventListener('click', ()=>{
+        bodyHTML.classList.toggle('body_dark')
+    })
+
+    botonDarkHTML.addEventListener('click', ()=>{
+        header_textHTML.classList.toggle('header_text-box_dark')
+    })
+
+    botonDarkHTML.addEventListener('click', ()=>{
+        header_HTML.classList.toggle('header_dark')
+    })
+
+    botonDarkHTML.addEventListener('click', ()=>{
+        fotter_HTML.classList.toggle('footer_dark')
+    })
+
+    botonDarkHTML.addEventListener('click', ()=>{
+        headIMG_HTML.classList.toggle('header_img_Dark')
+    })
+
+    botonDarkHTML.addEventListener('click', ()=>{
+        headerColorHTML.classList.toggle('header_text_dark')
+    })
+
+    botonDarkHTML.addEventListener('click', ()=>{
+        cartDarkHTML.classList.toggle('cart_dark')
+    })
+
+    
 }
 
 
