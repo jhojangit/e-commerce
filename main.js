@@ -243,7 +243,7 @@ function showProducts(db) {
             <div class="product_line">
                 <p class="product_price">$${db.products[i].price} <span>Stock ${db.products[i].quantity}</span></p>
                 <button class="product_button" id="${db.products[i].id}">+</button>
-                </div>
+            </div>
             <p class="product_name">${db.products[i].name}</p>
         </div>`
 
@@ -307,6 +307,9 @@ function darkMode() {
     let headIMG_HTML = document.querySelector('.header_img')
     let headerColorHTML = document.querySelector('header')
     let cartDarkHTML = document.querySelector('.cart')
+    let containerProductDarkHTML = document.querySelector('.main_products')
+    let footerCopyDarkHTML = document.querySelector('.footer_copy')
+
 
 
 
@@ -338,6 +341,14 @@ function darkMode() {
         cartDarkHTML.classList.toggle('cart_dark')
     })
 
+    botonDarkHTML.addEventListener('click', ()=>{
+        containerProductDarkHTML.classList.toggle('product_container_dark')
+    })
+
+    botonDarkHTML.addEventListener('click', ()=>{
+        footerCopyDarkHTML.classList.toggle('footer_copy_dark')
+    })
+    
     
 }
 

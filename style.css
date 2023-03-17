@@ -68,12 +68,13 @@ nav{
     background-color: transparent;
     top: 0;
     left: 0;
+    padding: auto;
     width: 100%;
     height: var(--height-header);
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     z-index: 1000;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -147,7 +148,7 @@ i.bx.bx-cart:hover{
 .nav_menu-options{
     width: 100%;
     height: calc(100vh - var(--height-header));
-    background-color: rgba(255, 255, 255, 0.958);
+    background-color: white;
     border-top: 1px solid grey;
     position: fixed;
     top: var(--height-header);
@@ -373,8 +374,7 @@ main{
 }
 
 .product_container_dark{
-    background-color: var(--container-colorDark);
-    color: aliceblue;
+    background-color: var(--car-colorDark);
 }
 
 .product_container img{
@@ -383,6 +383,7 @@ main{
     width: 300px;
     height: 300px;
 }
+
 
 .product_container_dark img{
     background-color: var(--card-colorDark);
@@ -600,6 +601,10 @@ footer{
         justify-content: center;
         line-height: 1.5rem;
         
+    }
+
+    .footer_copy_dark{
+        background-color: rgb(20, 45, 37);
     }
 
 }
