@@ -245,6 +245,7 @@ function showProducts(db) {
                 <button class="product_button" id="${db.products[i].id}">+</button>
             </div>
             <p class="product_name">${db.products[i].name}</p>
+            <p class="product_name"> <b>${db.products[i].category}</b> </p>
         </div>`
 
 
@@ -351,7 +352,6 @@ function darkMode() {
     
     
 }
-
 
 
 main()

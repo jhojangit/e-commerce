@@ -479,6 +479,7 @@ footer{
 .footer_container p{
     color: var(--button-color);
     font-weight: 500;
+    cursor: pointer;
 }
 
 .footer_social .bx {
