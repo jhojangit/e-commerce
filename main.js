@@ -11,6 +11,8 @@ async function main() {
 
     showCart()
 
+    showMenu()
+
     showProducts(db)
 
     addItemsCart(db)
@@ -232,7 +234,6 @@ function showProducts(db) {
     let htmlProducts = document.querySelector('.main_products')
     let html = ''
 
-    console.log(db.products)
     for (const i in db.products) {
         html += `
         <div class="product_container ${db.products[i].category}">
@@ -261,6 +262,28 @@ function showCart() {
     })
 }
 
+function showMenu(){
+    let btnMenuHTML = document.querySelector('i.bx.bx-menu')
+    let menuHTML = document.querySelector('.nav_menu-options')
+    let homeText = document.querySelector('.btn_home-text')
+    let productText = document.querySelector('.btn_products-text') 
+
+
+    homeText.addEventListener('click', ()=>{
+        menuHTML.classList.toggle('nav_menu-options_show')
+    })
+
+    btnMenuHTML.addEventListener('click', ()=>{
+        menuHTML.classList.toggle('nav_menu-options_show')
+    })
+
+    productText.addEventListener('click', ()=>{
+        menuHTML.classList.toggle('nav_menu-options_show')
+    })
+
+
+}
+
 function visibleNav() {
     let navHTML = document.querySelector('nav') 
     window.addEventListener('scroll', () =>{
@@ -272,5 +295,7 @@ function visibleNav() {
         
     })
 }
+
+
 
 main()

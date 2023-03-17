@@ -38,6 +38,10 @@ header{
     flex-direction: column;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 header nav a{
     text-decoration: none;
     color: inherit;
@@ -119,6 +123,39 @@ nav svg{
 i.bx.bx-cart:hover{
     cursor: pointer;
     color: var(--principalRed);
+}
+
+.nav_menu-options{
+    width: 100%;
+    height: calc(100vh - var(--height-header));
+    background-color: rgba(255, 255, 255, 0.958);
+    border-top: 1px solid grey;
+    position: fixed;
+    top: var(--height-header);
+    right: -500%;
+    transition: right .5s;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nav_menu-options>a{
+    font-size: x-large;
+    color: #000;
+}
+
+.nav_menu-options_show{
+    right: 0;
+}
+
+.nav_menu-options>p{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: x-large;
+    text-decoration: underline;
 }
 
 .cart{
@@ -258,6 +295,8 @@ i.bx.bx-cart:hover{
     background-color: var(--button-color-alt);
     font-size: .9rem;
 }
+
+
 
 main{
     max-width:1200px;
@@ -451,6 +490,11 @@ footer{
     }
 
     i.bx.bx-menu{
+        display: none;
+    }
+
+
+    .nav_menu-options{
         display: none;
     }
 

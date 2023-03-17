@@ -15,7 +15,7 @@
     <header>
 
         <nav>
-            <div class="nameLogo">
+            <div class="nameLogo" id="home">
                 <a href="">JRStore</a>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="nav_logo-icon">
                     <title>Academlo Logo</title>
@@ -28,15 +28,16 @@
                     </g>
                 </svg>
 
-                <p href="">Home</p>
-                <p href="">Products</p>
+                <a href=""> <p>Home</p></a>
+                <a href="#products_id"> <p>Products</p></a>
 
             </div>
             <div class="nav_options">
                 <i class='bx bx-menu'></i>
                 <i class='bx bx-cart'></i>
             </div>
-            
+
+
             <div class="cart">
                 <div class="cart_products"></div>
                 <div class="cart_total"></div>
@@ -48,6 +49,11 @@
 
         <div class="header_img">
             <img src="https://academlostorev1.netlify.app/images/sweater2.png" alt="">
+        </div>
+
+        <div class="nav_menu-options">   
+            <a class="btn_home-text" href="">Home</a>
+            <a class="btn_products-text"href="#products_id">Products</a>
         </div>
 
         <div class="header_text-box">
@@ -62,8 +68,8 @@
     </header>
 
     <main>
-
-        <div class="main_products-filter">
+        
+        <div class="main_products-filter" id="products_id">
             <button class="filter_all" data-filter="all">All</button>
 
             <button class="filter_hoddie" data-filter=".hoddie">Hoddie</button>
