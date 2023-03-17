@@ -92,6 +92,7 @@ nav svg{
     -webkit-box-shadow: 0px -19px 33px 16px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px -19px 33px 16px rgba(0,0,0,0.75);
     box-shadow: 0px -19px 33px 16px rgba(0,0,0,0.75);
+    
 }
 
 .main_products-filter{
@@ -101,6 +102,7 @@ nav svg{
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 3rem;
+    margin-top: 15px;
 }
 
 .main_products-filter button{

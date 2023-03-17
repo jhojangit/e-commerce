@@ -287,7 +287,7 @@ function showMenu(){
 function visibleNav() {
     let navHTML = document.querySelector('nav') 
     window.addEventListener('scroll', () =>{
-        if (window.scrollY > 50) {
+        if (window.scrollY > 20) {
             navHTML.classList.add('visible_nav')
         }else{
             navHTML.classList.remove('visible_nav')
